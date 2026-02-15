@@ -17,6 +17,18 @@ slt.title("Model Evaluation Dashboard (Pickle)")
 slt.sidebar.header("1. Upload Test Data")
 uploaded_file = slt.sidebar.file_uploader("Upload your test CSV", type=['csv'])
 
+#1.1 Dataset Download
+if uploaded_file is not None:
+    # Read the file content for the download button
+    file_bytes = uploaded_file.getvalue()
+    
+    slt.sidebar.download_button(
+        label="Download Uploaded CSV",
+        data=file_bytes,
+        file_name=f"re_downloaded_{uploaded_file.name}",
+        mime="text/csv"
+    )
+
 # 2. Model Selection
 model_folder = "model"
 # Filter for .pkl files specifically
@@ -49,9 +61,9 @@ if uploaded_file is not None:
             
             # 3. & 4. Display Metrics & Visuals
             accuracy = accuracy_score(y_test, y_pred)
-            precision = precision_score(y_test, y_pred, average='weighted')
-            recall = recall_score(y_test, y_pred, average='weighted')
-            f1 = f1_score(y_test, y_pred, average='weighted')
+            precision = precision_score(y_test, y_pred)
+            recall = recall_score(y_test, y_pred)
+            f1 = f1_score(y_test, y_pred)
             mcc = matthews_corrcoef(y_test, y_pred)
             try:
               auc = roc_auc_score(y_test, y_probs)
