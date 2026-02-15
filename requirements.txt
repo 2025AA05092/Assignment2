@@ -1,10 +1,10 @@
 streamlit
+scikit-learn
 pandas
 numpy
 matplotlib
 seaborn
 sklearn
 xgboost
-scikit-learn
 joblib
 os
