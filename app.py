@@ -30,8 +30,8 @@ if uploaded_file is not None:
     slt.write("### Test Data Preview", df.head())
     
     target_col = st.selectbox("Select the target column", df.columns, index=len(df.columns)-1)
-    X_test = df.drop(columns=[Stress Keeps Patient from Sleeping])
-    y_test = df[Stress Keeps Patient from Sleeping]
+    X_test = df.drop(columns=['Stress Keeps Patient from Sleeping'])
+    y_test = df['Stress Keeps Patient from Sleeping']
 
     if st.button("Evaluate Model"):
         try:
