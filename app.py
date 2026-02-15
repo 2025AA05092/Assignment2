@@ -2,8 +2,8 @@ import streamlit as slt
 import pandas as pd
 import pickle
 import os
-from sklearn.metrics import classification_report, confusion_matrix
-from sklearn.metrics import (
+from scikit-learn.metrics import classification_report, confusion_matrix
+from scikit-learnklearn.metrics import (
     accuracy_score, precision_score, recall_score, 
     f1_score, roc_auc_score, matthews_corrcoef
 )
